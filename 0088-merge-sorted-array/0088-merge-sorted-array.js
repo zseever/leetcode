@@ -12,14 +12,7 @@ var merge = function(nums1, m, nums2, n) {
     let idxCtr = 0
     let tempTest = 0
     while (nums2.length > 0) {
-    // while (tempTest < 10) {    
-        if (nums1[idxCtr] >= nums2[0]) {
-            nums1.splice(idxCtr,0,nums2[0])
-            nums1.pop()
-            nums2.shift()
-            idxCtr++
-            n--
-        } else if (idxCtr === nums1.length-n) {
+        if (nums1[idxCtr] >= nums2[0] || idxCtr === nums1.length-n) {
             nums1.splice(idxCtr,0,nums2[0])
             nums1.pop()
             nums2.shift()
@@ -28,10 +21,5 @@ var merge = function(nums1, m, nums2, n) {
         } else if (nums1[idxCtr] < nums2[0]) {
             idxCtr++
         } 
-        // console.log('---')
-        // console.log(nums2)
-        // console.log(idxCtr,' -IdxCtr')
-        // console.log(nums1.length-n,' -nums1 true length')
-        // tempTest++
     }
 };

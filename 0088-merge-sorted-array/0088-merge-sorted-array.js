@@ -10,7 +10,6 @@ var merge = function(nums1, m, nums2, n) {
     // while nums2 arr has length > 0
     // use a counter/index variable to track loop progress through nums1
     let idxCtr = 0
-    let tempTest = 0
     while (nums2.length > 0) {
         if (nums1[idxCtr] >= nums2[0] || idxCtr === nums1.length-n) {
             nums1.splice(idxCtr,0,nums2[0])

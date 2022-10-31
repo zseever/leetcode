@@ -15,17 +15,6 @@ var checkStraightLine = function(coordinates) {
         } else if (!(y === (slope * x) + b)) { 
             return false
         }
-        
-        // if (i === 0) {
-        //     if (coordinates[i+1][0]- x === 0) {
-        //         slope = 0
-        //         b = 0
-        //     } else {
-        //       slope = (coordinates[i+1][1] - y)/(coordinates[i+1][0]- x)
-        //         b = y - (slope * x)  
-        //     }    
-        // }
-        // if (y !== (slope * x) + b) return false
     }
     return true
 };

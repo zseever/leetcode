@@ -14,8 +14,10 @@ var reverseString = function(s) {
     let r = s.length-1
     
     while (l < r) {
-        s.splice(r+1,0,s[l])
-        s.shift()
+        let temp = s[r]
+        s[r] = s[l]
+        s[l] = temp
+        l++
         r--
     }
     

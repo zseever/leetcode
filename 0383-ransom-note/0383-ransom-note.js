@@ -9,13 +9,6 @@ var canConstruct = function(ransomNote, magazine) {
     magazine.split('').forEach(letter => {
         hash[letter] ? hash[letter]++ : hash[letter] = 1
     })
-    // ransomNote.split('').forEach(letter => {
-    //     if (hash[letter]) {
-    //         hash[letter]--
-    //     } else {
-    //         return false
-    //     }
-    // })
     for (let i = 0; i < ransomNote.length; i++) {
         if (hash[ransomNote[i]]) {
             hash[ransomNote[i]]--

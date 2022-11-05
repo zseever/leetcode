@@ -8,6 +8,5 @@ var rotate = function(nums, k) {
         k -= nums.length
     }
     let slicedNums = nums.splice(nums.length-k,k)
-    console.log(slicedNums)
     nums.unshift(...slicedNums)
 };

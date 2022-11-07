@@ -5,12 +5,10 @@
  */
 var checkInclusion = function(s1, s2) {
     if (s1.length > s2.length) return false
-    s1 = s1.split('')
-    s2 = s2.split('')
     let seenVals = {}
-    s1.forEach(val => {
-        seenVals[val] = (seenVals[val] || 0) + 1
-    })
+    for (let i = 0; i < s1.length; i++) {
+        seenVals[s1[i]] = (seenVals[s1[i]] || 0) + 1
+    }
     let left = 0
     let right = 0
     let requiredLen = s1.length

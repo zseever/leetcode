@@ -19,7 +19,6 @@ var removeNthFromEnd = function(head, n) {
     }
     let nodeToRemove = listLen - n + 1
     let nodeCtr = 1
-    console.log(`${nodeToRemove} - ${nodeCtr}`)
     curNode = head
     if (!curNode.next) {
         head = null

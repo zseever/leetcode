@@ -20,9 +20,7 @@ var guessNumber = function(n) {
             lower = choice + 1
         } else if (guess(choice) === -1) {
             upper = choice - 1
-        } else if (guess(choice) === 0) {
-            return choice
-        }
+        } 
         choice = Math.floor((upper + lower)/2)
     }
     return choice

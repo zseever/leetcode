@@ -11,7 +11,6 @@ var findTheDifference = function(s, t) {
     for (let i=0; i < t.length; i++) {
         hash[t[i]]--
     }
-    // console.log(hash)
     for (const prop in hash) {
         if (hash[prop] === -1 || isNaN(hash[prop])) {
             return prop

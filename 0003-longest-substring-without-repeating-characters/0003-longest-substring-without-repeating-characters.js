@@ -24,7 +24,6 @@ var lengthOfLongestSubstring = function(s) {
         if (longestSubStr < curSubStrLen) {
             longestSubStr = curSubStrLen
         }
-        console.log(`${curChar} - ${curSubStrLen} - ${longestSubStr}`)
     }
     return longestSubStr
 };

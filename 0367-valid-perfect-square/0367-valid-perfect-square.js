@@ -8,7 +8,6 @@ var isPerfectSquare = function(num) {
     let mid = Math.ceil((start + end)/2)
     while (start !== end || (mid * mid === num)) {
         if (mid * mid === num) {
-            console.log(start,' ',mid,' ',end)
             return true
         } else if (mid * mid > num) {
             end = mid - 1
@@ -17,9 +16,6 @@ var isPerfectSquare = function(num) {
         }
         mid = Math.ceil((start + end)/2)
     }
-    // if (mid * mid === num) {
-    //         return true
-    // }
     return false
 };
 

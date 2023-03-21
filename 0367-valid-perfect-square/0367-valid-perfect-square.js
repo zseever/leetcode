@@ -3,18 +3,10 @@
  * @return {boolean}
  */
 var isPerfectSquare = function(num) {
-    // for (let i = 0; i <= Math.ceil(num/2); i++) {
-    //     if (i * i === num) {
-    //         return true
-    //     }
-    // }
-    // return false
-    let counter = 0
     let start = 0
     let end = Math.ceil(num/2)
-    // let end = num
     let mid = Math.ceil((start + end)/2)
-    while (start !== end) {
+    while (start !== end || (mid * mid === num)) {
         if (mid * mid === num) {
             console.log(start,' ',mid,' ',end)
             return true
@@ -25,9 +17,16 @@ var isPerfectSquare = function(num) {
         }
         mid = Math.ceil((start + end)/2)
     }
-    if (mid * mid === num) {
-            console.log(start,' ',mid,' ',end)
-            return true
-    }
+    // if (mid * mid === num) {
+    //         return true
+    // }
     return false
 };
+
+
+    // for (let i = 0; i <= Math.ceil(num/2); i++) {
+    //     if (i * i === num) {
+    //         return true
+    //     }
+    // }
+    // return false

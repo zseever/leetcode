@@ -21,9 +21,10 @@ var isSubsequence = function(s, t) {
         if (s[left] === t[left]) {
             left++
         } else if (s[left] !== t[left]) {
-            t = t.split('')
-            t.splice(left,1)
-            t = t.join('')
+            // t = t.split('')
+            // t.splice(left,1)
+            // t = t.join('')
+            t = t.slice(0,left) + t.slice(left+1)
             
         }
         if (s === t.slice(0,left+1)) {

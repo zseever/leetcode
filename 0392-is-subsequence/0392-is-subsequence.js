@@ -17,22 +17,13 @@ var isSubsequence = function(s, t) {
     //     return false
     // }
     let left = 0
-    let right = 0
     while (left < t.length) {
-        // if s[left] = t[left], increment left
-        // if s[left] != t[left], remove t[left] (no increment)
-        // check if s = t[0:s.length]
         if (s[left] === t[left]) {
             left++
         } else if (s[left] !== t[left]) {
-            // t = t.split('').splice(left,1).join('')
             t = t.split('')
-            // console.log(t)
             t.splice(left,1)
-            // console.log(t)
             t = t.join('')
-            // console.log(t)
-            // console.log('------')
             
         }
         if (s === t.slice(0,left+1)) {

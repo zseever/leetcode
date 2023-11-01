@@ -12,11 +12,12 @@ var lengthOfLongestSubstring = function(s) {
     let maxStr = ''
     let tempStr = ''
     let usedChars = {}
-    while (left < s.length) {
-        let subStr = s.slice(left,right)
+    while (left < s.length && right <= s.length) {
+        // let subStr = s.slice(left,right)
+        tempStr = tempStr + s[right-1]
         if (!usedChars[s[right-1]]) {
-            if (subStr.length > maxStr.length) {
-                maxStr = subStr
+            if (tempStr.length > maxStr.length) {
+                maxStr = tempStr
             }
             usedChars[s[right-1]] = true
             right++
@@ -24,6 +25,7 @@ var lengthOfLongestSubstring = function(s) {
             usedChars = {}
             left++
             right = left + 1
+            tempStr = ''
         }
     }
     return maxStr.length

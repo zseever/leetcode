@@ -10,34 +10,45 @@ var romanToInt = function(s) {
     // if the value next to x is L or c, add 40 or 90 to the total and skip past i + the next
     // if the value next to c is D or M, add 400 or 900 to the total and skip past i + the next
     for (let i = 0; i < s.length; i++) {
-        if (s[i] === 'I' && (s[i+1] === 'V' || s[i+1] === 'X')) {
-            if (s[i+1] === 'V') {
-                total += 4
-                i++
-            } else if (s[i+1] === 'X') {
-                total += 9
-                i++
-            }
-        } else if (s[i] === 'X' && (s[i+1] === 'L' || s[i+1] === 'C')) {
-            if (s[i+1] === 'L') {
-                total += 40
-                i++
-            } else if (s[i+1] === 'C') {
-                total += 90
-                i++
-            }
-        } else if (s[i] === 'C' && (s[i+1] === 'D' || s[i+1] === 'M')) {
-            if (s[i+1] === 'D') {
-                total += 400
-                i++
-            } else if (s[i+1] === 'M') {
-                total += 900
-                i++
-            }
+        if (rLkup[s[i]] < rLkup[s[i+1]]) {
+            total += rLkup[s[i+1]] - rLkup[s[i]]
+            i++
         } else {
             total += rLkup[s[i]]
         }
     }
+    
+    
+    
+    // for (let i = 0; i < s.length; i++) {
+    //     if (s[i] === 'I' && (s[i+1] === 'V' || s[i+1] === 'X')) {
+    //         if (s[i+1] === 'V') {
+    //             total += 4
+    //             i++
+    //         } else if (s[i+1] === 'X') {
+    //             total += 9
+    //             i++
+    //         }
+    //     } else if (s[i] === 'X' && (s[i+1] === 'L' || s[i+1] === 'C')) {
+    //         if (s[i+1] === 'L') {
+    //             total += 40
+    //             i++
+    //         } else if (s[i+1] === 'C') {
+    //             total += 90
+    //             i++
+    //         }
+    //     } else if (s[i] === 'C' && (s[i+1] === 'D' || s[i+1] === 'M')) {
+    //         if (s[i+1] === 'D') {
+    //             total += 400
+    //             i++
+    //         } else if (s[i+1] === 'M') {
+    //             total += 900
+    //             i++
+    //         }
+    //     } else {
+    //         total += rLkup[s[i]]
+    //     }
+    // }
     return total
 }
 

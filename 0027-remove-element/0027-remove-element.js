@@ -10,6 +10,5 @@ var removeElement = function(nums, val) {
             i--
         }
     }
-    k = nums.length
-    return k
+    return nums.length
 };

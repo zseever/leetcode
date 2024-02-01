@@ -6,14 +6,10 @@
 
 var maximumWealth = function(accounts) {
     let topWealth = 0;
-    let wealth = 0;
     for (let i = 0; i < accounts.length; i++) {
+        let wealth = 0;
         for (let j = 0; j < accounts[i].length ; j++) {
-            if (j === 0) {
-                wealth = accounts[i][j]
-            } else {
-                wealth += accounts [i][j]
-            }
+            wealth += accounts [i][j]
         }
         if (wealth > topWealth) {
             topWealth = wealth

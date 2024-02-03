@@ -9,11 +9,9 @@ var canConstruct = function(ransomNote, magazine) {
         let magLetter = magazine[i]
         hash[magLetter] = hash[magLetter] ? hash[magLetter] + 1 : 1
     }
-    console.log(hash)
     for (let i = 0; i < ransomNote.length; i++) {
         let ranLetter = ransomNote[i]
         if (hash[ranLetter]) {
-            // hash[ranLetter] = hash[ranLetter]--
             hash[ranLetter]--
         } else {
             return false

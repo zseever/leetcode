@@ -23,7 +23,6 @@ var middleNode = function(head) {
         if (curNode === midpoint) {
             break
         }
-        console.log(node.val)
         node = node.next
         curNode++
         

@@ -21,7 +21,7 @@ var middleNode = function(head) {
     node = head
     while (node.next) {
         if (curNode === midpoint) {
-            break
+            return node
         }
         node = node.next
         curNode++

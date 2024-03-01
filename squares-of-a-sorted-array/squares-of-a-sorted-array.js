@@ -3,33 +3,40 @@
  * @return {number[]}
  */
 var sortedSquares = function(nums) {
-    let squaredNums = []
-    for (let i = 0; i < nums.length; i++) {
-        squaredNums.push(nums[i]**2)
+    let negatives = []
+    let newArr = []
+    let idx = 0
+    while (nums[idx] < 0) {
+        negatives.push(nums[idx]**2)	
+        idx++
     }
-    squaredNums.sort((a,b) => a-b)
-    return squaredNums
+    if (idx >= nums.length) {
+        for (let i = negatives.length-1; i >= 0; i--) {
+            newArr.push(negatives[i])
+            negatives.pop()
+        }
+    } else {
+        for (let i = idx; i < nums.length; i++) {
+            if (negatives[negatives.length-1] <= nums[i]**2) {
+                newArr.push(negatives[negatives.length-1])
+                negatives.pop()
+                i--
+            } else {
+                newArr.push(nums[i]**2)
+            }
+        }        
+    }
+    while (negatives.length) {
+        newArr.push(negatives[negatives.length-1])
+        negatives.pop()
+    }
+
+    return newArr    
     
-    // let stack = []
+    // let squaredNums = []
     // for (let i = 0; i < nums.length; i++) {
-    //     if (nums[i] < 0) {
-    //         stack.push(nums[i]**2)
-    //         nums.shift()
-    //         i--
-    //     } else if (nums[i] > 0) {
-    //         nums[i] = nums[i]**2
-    //         while (nums[i] > stack[stack.length-1]) {
-    //             nums.splice(i,0,stack.pop())
-    //             i++
-    //         }
-    //     }
-    //     if (!nums.length) {
-    //         while (stack.length) {
-    //             nums.push(stack.pop())
-    //         }
-    //         i = nums.length
-    //     }
+    //     squaredNums.push(nums[i]**2)
     // }
-    // return nums
-    
+    // squaredNums.sort((a,b) => a-b)
+    // return squaredNums
 };

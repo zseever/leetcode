@@ -17,8 +17,6 @@ var pivotInteger = function(n) {
             left += 1
             leftSum += range[left]
         }
-        console.log('index ',left,' - ',right)
-        console.log('sum ',leftSum,' - ',rightSum)
     }
     if (leftSum === rightSum) {
         return left

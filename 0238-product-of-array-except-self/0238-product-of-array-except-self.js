@@ -7,15 +7,19 @@ var productExceptSelf = function(nums) {
     let postfix = new Array(nums.length).fill(1)
     let result = []
     let product = 1
+    let product2 = 1
     for (let i=0; i < nums.length; i++) {
         product *= nums[i]
-        prefix.push(product)        
+        prefix.push(product)      
+        
+        product2 *= nums[nums.length-1-i]
+        postfix[nums.length-1-i] = product2
     }
-    product = 1
-    for (let i=nums.length-1; i >= 0; i--) {
-        product *= nums[i]
-        postfix[i] = product
-    }
+    // product = 1
+    // for (let i=nums.length-1; i >= 0; i--) {
+    //     product *= nums[i]
+    //     postfix[i] = product
+    // }
     for (let i=0; i < nums.length; i++) {
         let val
         if (i === 0) {

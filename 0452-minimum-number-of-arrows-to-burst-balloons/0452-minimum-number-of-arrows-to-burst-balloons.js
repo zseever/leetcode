@@ -13,7 +13,6 @@ var findMinArrowShots = function(points) {
             return 0
         }
     })
-    console.log(points)
     let curVal
     let intervals = 0
     for (let i=0; i < points.length; i++) {

@@ -19,7 +19,6 @@ var leastInterval = function(tasks, n) {
     for (let i=newArr.length-2; i>=0; i--) {
         idle -= Math.min(maxVal, newArr[i])
     }
-    console.log(idle)
     return idle > 0 ? idle + tasks.length : tasks.length
 
 };

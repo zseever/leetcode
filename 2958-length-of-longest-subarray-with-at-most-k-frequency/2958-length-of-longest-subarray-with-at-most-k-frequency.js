@@ -10,7 +10,6 @@ var maxSubarrayLength = function(nums, k) {
     let res = 0
     
     while (left < nums.length) {
-        // hash[nums[right]] = hash[nums[right]] >= 1 ? hash[nums[right]] + 1 : 1
         
         if (right < nums.length && (hash[nums[right]] < k || hash[nums[right]] === undefined)) {
             hash[nums[right]] = hash[nums[right]] >= 1 ? hash[nums[right]] + 1 : 1
@@ -19,9 +18,7 @@ var maxSubarrayLength = function(nums, k) {
         } else {
             hash[nums[left]] = hash[nums[left]] > 0 ? hash[nums[left]] - 1 : 0
             left++
-            // if (left === right) {
-            //     right++
-            // }
+
         }
 
     }

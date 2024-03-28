@@ -16,21 +16,14 @@ var maxOperations = function(nums, k) {
         }
     }   
     
-    console.log(seen)
-    
     for (let i=0; i < nums.length; i++) {
         let tar = k-nums[i]
         if (seen[tar]?.length >= 1 && seen[nums[i]]?.length >= 1) {
-            if (tar === nums[i] && seen[tar].length === 1) {
-                console.log('criteria met')
-            } else {
+            if (!(tar === nums[i] && seen[tar].length === 1)) {
                 res++
                 seen[tar].pop()
                 seen[nums[i]].pop()  
             }
-            //{ '2': [ 3 ], '3': [ 0, 2, 4 ], '5': [ 1 ] }
-
-            
         }
     }
     

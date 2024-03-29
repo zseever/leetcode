@@ -16,6 +16,7 @@ var countSubarrays = function(nums, k) {
         }
         
         while (occ >= k) {
+            // once we hit a valid subarr, any value that comes after would auto be another subarr
             res += (nums.length - right)
             if (nums[left] === max) {
                 occ -= 1

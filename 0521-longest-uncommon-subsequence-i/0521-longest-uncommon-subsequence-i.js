@@ -8,11 +8,9 @@ var findLUSlength = function(a, b) {
     // if values are equal, return -1
     // otherwise return length of a
     
-    if (a.length !== b.length) {
-        return Math.max(a.length, b.length)
-    } else if (a === b) {
+    if (a === b) {
         return -1
     } else {
-        return a.length
+        return Math.max(a.length, b.length)
     }
 };

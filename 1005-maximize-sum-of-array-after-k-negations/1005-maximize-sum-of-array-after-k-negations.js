@@ -32,7 +32,6 @@ var largestSumAfterKNegations = function(nums, k) {
         
         k--
     }
-    // console.log(nums)
     
     nums.forEach(num => {
         result += num

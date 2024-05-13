@@ -11,7 +11,7 @@ var imageSmoother = function(img) {
         for (let j = 0; j < img[i].length; j++) {
             let counter = 1
             let total = img[i][j]
-            // check 8 surrounding squares, if direction is valid increment counter and subtotal
+
             if (j > 0 && img[i][j-1] >= 0) {
                 counter++
                 total += img[i][j-1]
@@ -45,7 +45,6 @@ var imageSmoother = function(img) {
                 total += img[i+1][j+1]
             }
             
-            console.log(total,'-',counter)
             tempRes.push(Math.floor(total/counter))
         }
         

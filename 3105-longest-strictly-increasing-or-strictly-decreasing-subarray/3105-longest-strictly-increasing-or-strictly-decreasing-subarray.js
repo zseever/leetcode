@@ -24,7 +24,6 @@ var longestMonotonicSubarray = function(nums) {
             left = right
         }
 
-        // left = right+1
         right = left
         
     }

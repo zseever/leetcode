@@ -4,8 +4,13 @@
  * @return {number}
  */
 var addedInteger = function(nums1, nums2) {
-    nums1.sort((a,b) => a-b)
-    nums2.sort((a,b) => a-b)
+    let min1 = nums1[0]
+    let min2 = nums2[0]
     
-    return nums2[0]-nums1[0]
+    for (let i=0; i < nums1.length; i++) {
+        min1 = nums1[i] < min1 ? nums1[i] : min1
+        min2 = nums2[i] < min2 ? nums2[i] : min2
+    }
+    
+    return min2-min1
 };

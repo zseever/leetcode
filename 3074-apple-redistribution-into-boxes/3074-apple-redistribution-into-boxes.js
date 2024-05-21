@@ -4,7 +4,7 @@
  * @return {number}
  */
 var minimumBoxes = function(apple, capacity) {
-    apple.sort((a,b) => a-b)
+    // apple.sort((a,b) => a-b)
     capacity.sort((a,b) => b-a)
     
     let capIdx = 0

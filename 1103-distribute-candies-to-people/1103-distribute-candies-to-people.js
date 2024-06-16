@@ -18,7 +18,6 @@ var distributeCandies = function(candies, num_people) {
             } else {
                 result[i] += base + i
                 candies -= base + i
-                console.log(result[i],'-',candies)
             }
         }
         counter++
